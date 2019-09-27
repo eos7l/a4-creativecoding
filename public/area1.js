@@ -13,7 +13,6 @@ var xScaleLine = d3.time.scale()
 var yScaleLine = d3.scale.linear()
     .range([ marginLine.top, hLine - marginLine.bottom]);
 
-
 //Set up date formatting and years
 var dateFormat = d3.time.format("%Y");
 
@@ -116,7 +115,7 @@ d3.csv("final.csv", function(data) {
         .enter()
         .append("g")
         .classed("national", function(d) {
-            if (d.genre == "Mystery") return true;
+            if (d.genre === "Mystery") return true;
             else return false;
         })
         .on("mouseover", function(d) {
@@ -160,7 +159,7 @@ d3.csv("final.csv", function(data) {
         });
 
     //Within each group, create a new line/path,
-    //binding just the div9 rate data to each one
+    //binding just the rate data to each one
     groups.selectAll("path")
         .data(function(d) {
             return [ d.rate ];
@@ -197,6 +196,73 @@ d3.csv("final.csv", function(data) {
         .attr("class","labelGenre")
         .text( + data[20][years[18]] );
 
+    var brush = d3.svg.brush()
+        .x(xScaleLine)
+        .on("brush", brushmove)
+        .on("brushend", brushend);
 
+
+    linechart.append("g")
+        .attr("class", "brush")
+        .call(brush)
+        .selectAll('rect')
+        .attr('height', h);
+
+    // groups.on('mousedown', function(){
+    //     brush_elm = svg.select(".brush").node();
+    //     new_click_event = new Event('mousedown');
+    //     new_click_event.pageX = d3.event.pageX;
+    //     new_click_event.clientX = d3.event.clientX;
+    //     new_click_event.pageY = d3.event.pageY;
+    //     new_click_event.clientY = d3.event.clientY;
+    //     brush_elm.dispatchEvent(new_click_event);
+    // });
+
+    function brushmove() {
+        var extent = brush.extent();
+        groups.classed("selected", function(d) {
+            is_brushed = extent[0] <= d.index && d.index <= extent[1];
+            return is_brushed;
+        });
+    }
+
+    function brushend() {
+        get_button = d3.select(".clear-button");
+        if(get_button.empty() === true) {
+            clear_button = linechart.append('text')
+                .attr("y", 460)
+                .attr("x", 825)
+                .attr("class", "clear-button")
+                .text("Clear Brush");
+        }
+
+        xScaleLine.domain(brush.extent());
+
+        transition_data();
+        reset_axis();
+
+        groups.classed("selected", false);
+        d3.select(".brush").call(brush.clear());
+
+        clear_button.on('click', function(){
+            x.domain([0, 50]);
+            transition_data();
+            reset_axis();
+            clear_button.remove();
+        });
+    }
+    function transition_data() {
+        linechart.selectAll("rect")
+            .data(data)
+            .transition()
+            .duration(500)
+            .attr("cx", function(d) { return xScaleLine(d.index); });
+    }
+
+    function reset_axis() {
+        linechart.transition().duration(500)
+            .select(".x.axis")
+            .call(xAxisLine);
+    }
 
 });// end of d3.csv(
