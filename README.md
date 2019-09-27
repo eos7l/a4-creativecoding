@@ -73,4 +73,7 @@ Include a very brief summary of your project here. Images are encouraged, along 
 
 
 
-Linked views
+color background
+color chart
+font size
+color tooltip?

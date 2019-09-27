@@ -1,1 +1,2 @@
-//const dat = require('dat.gui');
+import {typingSpeed,typeEffect} from "./mod1.js";
+typeEffect(typingSpeed);
