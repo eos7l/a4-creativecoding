@@ -1,1 +1,1 @@
-//const dat = require('dat.gui');
+const dat = require('dat.gui');

@@ -4,18 +4,20 @@ var h = 500;
 var margin = {top: 40, right: 10, bottom: 20, left: 50};
 
 // Scale the width and height
-var xScale = d3.scaleLinear()
+var xScale = d3.scale.linear()
                 .range([0,w - margin.right - margin.left]);
 
-var yScale = d3.scaleBand()
-                .rangeRound([margin.top, h - margin.bottom],0.2);
+var yScale = d3.scale.ordinal()
+                .rangeRoundBands([margin.top, h - margin.bottom],0.2);
 
 // Creat Axes i.e. xAxis and yAxis
-var xAxis = d3.axisBottom()
-               .scale(xScale);
+var xAxis = d3.svg.axis()
+              .scale(xScale)
+              .orient("bottom");
 
-var yAxis = d3.axisLeft()
-              .scale(yScale);
+var yAxis = d3.svg.axis()
+              .scale(yScale)
+              .orient("left");
 
 // Create SVG 
 var barchart = d3.select("#area2")
@@ -24,7 +26,9 @@ var barchart = d3.select("#area2")
 			.attr("height", h);
 
 
+
 // Entering data
+
 d3.csv("final.csv", function(data) {
 
 	data.sort(function(a, b) {
@@ -33,7 +37,8 @@ d3.csv("final.csv", function(data) {
   //Setting a dynamic domain for the xScale based on Data
   xScale.domain([5
 /*  	 d3.min(data, function(d) {
-    return +d.avg; })*/,
+    return +d.avg; })*/, 
+
   	d3.max(data, function(d) {
     return +d.avg;
   }) ]);
@@ -90,7 +95,7 @@ d3.csv("final.csv", function(data) {
 			linechart.selectAll("g")
 			.each(function(d) {
 				if(d){
-					if ( d.genre === activegenre ){
+					if ( d.genre == activegenre ){
 // 									console.log(d3.select(this).select("path"));
 						d3.select(this).select("path").classed("pathLight", true);
 						
@@ -128,6 +133,6 @@ d3.csv("final.csv", function(data) {
 
 
 
-});
+}); // end of d3.csv
   
 
