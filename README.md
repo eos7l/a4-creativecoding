@@ -1,4 +1,4 @@
-Personal Shopping Assistant
+Data Visualization
 ===
 http://a4-eos7l.glitch.me
 
@@ -9,13 +9,14 @@ To fulfill the requirements:
 ### Six user controls:
 - Tooltip:
 - Linked views on hover:
-- Brushing (pan and zoom)
+- Brushing (pan and zoom):
+- Documentation button 
 
 ### Linter:
 
 - I used the built-in linter in Webstorm.
 - The JS Linter tolerates: for statement, multiple vars, single quote strings, this, whitespace mess, eval, bitwise operators 
-- It assumes: ES6, Node.js
+- It assumes: ES6, Node.js, in development, in a browser
 - Maximum line length: 100
 - Maximum number of error: 50
 

@@ -1,6 +1,3 @@
-//import {wLine,hLine,marginLine, xScaleLine,yScaleLine} from "./mod1.js";
-
-
 //Store width, height and margin in variables
 var wLine = 550;
 var hLine = 500;
@@ -8,10 +5,10 @@ var marginLine = {top: 40, right: 10, bottom: 20, left: 50};
 
 // Scale the width and height
 var xScaleLine = d3.time.scale()
-    .range([ marginLine.left, wLine - marginLine.right - marginLine.left ]);
+    .range([marginLine.left, wLine - marginLine.right - marginLine.left]);
 
 var yScaleLine = d3.scale.linear()
-    .range([ marginLine.top, hLine - marginLine.bottom]);
+    .range([marginLine.top, hLine - marginLine.bottom]);
 
 //Set up date formatting and years
 var dateFormat = d3.time.format("%Y");
@@ -21,7 +18,7 @@ var xAxisLine = d3.svg.axis()
     .scale(xScaleLine)
     .orient("bottom")
     .ticks(5)
-    .tickFormat(function(d) {
+    .tickFormat(function (d) {
         return dateFormat(d);
     });
 
@@ -35,12 +32,12 @@ var xLabelLine = wLine - marginLine.right - marginLine.left;
 // Configure line generator
 
 var line = d3.svg.line()
-    .x(function(d) {
+    .x(function (d) {
         return xScaleLine(dateFormat.parse(d.year)); // come back here and replace "year"
     })
-    .y(function(d) {
+    .y(function (d) {
         return yScaleLine(+d.amount); // come back here and replace "amount"
-    })
+    });
 
 //Create an empty svg
 
@@ -56,30 +53,26 @@ var activegenre; // Will be used for linked hovering
 
 // Load in csv data
 
-d3.csv("final.csv", function(data) {
+d3.csv("final.csv", function (data) {
 
     // Create new array of all years in timeline for linechart. Will be referenced later
-    var years = [ "2000","2001", "2002","2003","2004","2005","2006","2007","2008","2009","2010","2011", "2012", "2013", "2014", "2015","2016","20017","2018",];
+    var years = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"];
 
     //Make dataset an empty array (for now) to hold our restructured dataset
     dataset = [];
 
     // Loop once for each row in data
-    for (var i=0; i < data.length; i++) {
-
+    for (let i = 0; i < data.length; i++) {
         //Create a new object with the genre's name and empty array
         dataset[i] = {
             genre: data[i].genre,
             rate: []
         };
-
         //Loop through all the years
-        for (var j = 0; j < years.length; j++) {
-
+        for (let j = 0; j < years.length; j++) {
             //If value is empty
             if (data[i][years[j]]) {
-                //Add a new object to the Div 9 rate data array
-                //for that genre
+                //Add a new object to the Div 9 rate data array for that genre
                 dataset[i].rate.push({
                     year: years[j],
                     amount: data[i][years[j]]
@@ -90,60 +83,62 @@ d3.csv("final.csv", function(data) {
     } // end of for loop for data
 
     // Set scale domains
-
     xScaleLine.domain([
-        d3.min(years, function(d) {
+        d3.min(years, function (d) {
             return dateFormat.parse(d);
         }),
-        d3.max(years, function(d) {
+        d3.max(years, function (d) {
             return dateFormat.parse(d);
         })
     ]);
 
     yScaleLine.domain([
-        d3.max(dataset, function(d) {
-            return d3.max(d.rate, function(d) {
+        d3.max(dataset, function (d) {
+            return d3.max(d.rate, function (d) {
                 return +d.amount;
             });
         }),
         0
     ]);
 
+    linechart.append("defs").append("clipPath")
+        .attr("id", "clip")
+        .append("rect")
+        .attr("width", wLine)
+        .attr("height", hLine + 20);
+
+
     // Make a group for each genre
     var groups = linechart.selectAll("g")
         .data(dataset)
         .enter()
         .append("g")
-        .classed("national", function(d) {
+        .attr("clip-path", "url(#clip)")
+        .classed("national", function (d) {
             if (d.genre === "Mystery") return true;
             else return false;
         })
-        .on("mouseover", function(d) {
-
+        .on("mouseover", function (d) {
             activegenre = d.genre;
-
             // Setting position for the genre label
-            var xPosition = wLine/2 + 35;
+            var xPosition = wLine / 2 + 35;
             var yPosition = marginLine.top - 10;
-
             linechart.append("text")
                 .attr("id", "hoverLabel")
-                .attr("x", xPosition+110)
+                .attr("x", xPosition + 110)
                 .attr("y", yPosition)
                 .attr("text-anchor", "start")
-                .attr("font-family", "ff-nuvo-sc-web-pro-1,ff-nuvo-sc-web-pro-2, sans-serif")
                 .attr("font-size", "20px")
-                .text( activegenre);
+                .text(activegenre);
 
             d3.selectAll("rect")
-                .classed("barLight", function(d) {
-                    if ( d.genre === activegenre) return true;
-                    else return false;
+                .classed("barLight", function (d) {
+                    return d.genre === activegenre;
                 });
 
         }) // end of .on mouseover
 
-        .on("mouseout", function() {
+        .on("mouseout", function () {
             d3.select("#hoverLabel").remove();
 
             d3.selectAll("rect")
@@ -154,15 +149,15 @@ d3.csv("final.csv", function(data) {
 
     // Append a title with the genre name (for easy tooltips)
     groups.append("title")
-        .text(function(d) {
+        .text(function (d) {
             return d.genre;
         });
 
     //Within each group, create a new line/path,
     //binding just the rate data to each one
     groups.selectAll("path")
-        .data(function(d) {
-            return [ d.rate ];
+        .data(function (d) {
+            return [d.rate];
         })
         .enter()
         .append("path")
@@ -182,7 +177,7 @@ d3.csv("final.csv", function(data) {
         .append("text")
         .attr("x", 0 - marginLine.left)
         .attr("y", marginLine.top - 10)
-        .style ("text-anchor", "start")
+        .style("text-anchor", "start")
         .text("Number of movies released in the 21st Century in the genre of ");
 
     //Labels for highlighted lines - probably better to wrap these into the line elements themselves
@@ -193,14 +188,13 @@ d3.csv("final.csv", function(data) {
         .attr("dy", ".15em")
         .attr("dx", ".25em")
         .attr("text-anchor", "start")
-        .attr("class","labelGenre")
-        .text( + data[20][years[18]] );
+        .attr("class", "labelGenre")
+        .text(+data[20][years[18]]);
 
     var brush = d3.svg.brush()
         .x(xScaleLine)
         .on("brush", brushmove)
         .on("brushend", brushend);
-
 
     linechart.append("g")
         .attr("class", "brush")
@@ -208,27 +202,27 @@ d3.csv("final.csv", function(data) {
         .selectAll('rect')
         .attr('height', h);
 
-    // groups.on('mousedown', function(){
-    //     brush_elm = svg.select(".brush").node();
-    //     new_click_event = new Event('mousedown');
-    //     new_click_event.pageX = d3.event.pageX;
-    //     new_click_event.clientX = d3.event.clientX;
-    //     new_click_event.pageY = d3.event.pageY;
-    //     new_click_event.clientY = d3.event.clientY;
-    //     brush_elm.dispatchEvent(new_click_event);
-    // });
+    groups.on('mousedown', function(){
+        brush_elm = linechart.select(".brush").node();
+        new_click_event = new Event('mousedown');
+        new_click_event.pageX = d3.event.pageX;
+        new_click_event.clientX = d3.event.clientX;
+        new_click_event.pageY = d3.event.pageY;
+        new_click_event.clientY = d3.event.clientY;
+        brush_elm.dispatchEvent(new_click_event);
+    });
 
     function brushmove() {
         var extent = brush.extent();
-        groups.classed("selected", function(d) {
-            is_brushed = extent[0] <= d.index && d.index <= extent[1];
+        groups.classed("selected", function (d) {
+            is_brushed = extent[0] <= d.genre && d.genre <= extent[1];
             return is_brushed;
         });
     }
 
     function brushend() {
         get_button = d3.select(".clear-button");
-        if(get_button.empty() === true) {
+        if (get_button.empty() === true) {
             clear_button = linechart.append('text')
                 .attr("y", 460)
                 .attr("x", 825)
@@ -237,14 +231,11 @@ d3.csv("final.csv", function(data) {
         }
 
         xScaleLine.domain(brush.extent());
-
         transition_data();
         reset_axis();
-
         groups.classed("selected", false);
         d3.select(".brush").call(brush.clear());
-
-        clear_button.on('click', function(){
+        clear_button.on('click', function () {
             x.domain([0, 50]);
             transition_data();
             reset_axis();
@@ -256,9 +247,10 @@ d3.csv("final.csv", function(data) {
             .data(data)
             .transition()
             .duration(500)
-            .attr("cx", function(d) { return xScaleLine(d.index); });
+            .attr("cx", function (d) {
+                return xScaleLine(d.genre);
+            });
     }
-
     function reset_axis() {
         linechart.transition().duration(500)
             .select(".x.axis")

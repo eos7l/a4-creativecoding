@@ -1,10 +1,14 @@
+/*global window */
 import {typingSpeed,typeEffect} from "./mod1.js";
 typeEffect(typingSpeed);
 
 
 const alertDoc = function(){
-    window.alert("here is the alert")
-}
+    window.alert("here is the alert");
+};
+const clear=function(){
+
+};
 
 
 window.onload = function () {
