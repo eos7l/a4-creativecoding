@@ -4,36 +4,34 @@ var hLine = 500;
 var marginLine = {top: 40, right: 10, bottom: 20, left: 50};
 
 //Set up date formatting and years
-var dateFormat = d3.time.format("%Y");
+var dateFormat = d3.timeParse("%Y");
 
 // Scale the width and height
-var xScaleLine = d3.time.scale()
+var xScaleLine = d3.scaleTime()
                     .range([ marginLine.left, wLine - marginLine.right - marginLine.left ]);
 
-var yScaleLine = d3.scale.linear()
+var yScaleLine = d3.scaleLinear()
                     .range([ marginLine.top, hLine - marginLine.bottom]);
 
 // Creat Axes i.e. xAxis and yAxis
-var xAxisLine = d3.svg.axis()
+var xAxisLine = d3.axisBottom()
               .scale(xScaleLine)
-              .orient("bottom")
               .ticks(5)
               .tickFormat(function(d) {
                 return dateFormat(d);
               });
 
-var yAxisLine = d3.svg.axis()
-              .scale(yScaleLine)
-              .orient("left");
+var yAxisLine = d3.axisLeft()
+              .scale(yScaleLine);
 
 // Setting x position for line labels
 var xLabelLine = wLine - marginLine.right - marginLine.left;
 
 // Configure line generator
 
-var line = d3.svg.line()
+var line = d3.line()
     .x(function(d) {
-      return xScaleLine(dateFormat.parse(d.year)); // come back here and replace "year"
+      return xScaleLine(dateFormat(d.year)); // come back here and replace "year"
     })
     .y(function(d) {
       return yScaleLine(+d.amount); // come back here and replace "amount"
@@ -56,7 +54,7 @@ var activegenre; // Will be used for linked hovering
 d3.csv("final.csv", function(data) {
 
   // Create new array of all years in timeline for linechart. Will be referenced later
-  var years = [ "2000","2001", "2002","2003","2004","2005","2006","2007","2008","2009","2010","2011", "2012", "2013", "2014", "2015","2016","20017","2018",];
+  var years = [ "2000","2001", "2002","2003","2004","2005","2006","2007","2008","2009","2010","2011", "2012", "2013", "2014", "2015","2016","20017","2018"];
 
   //Make dataset an empty array (for now) to hold our restructured dataset
   dataset = [];
@@ -90,10 +88,10 @@ d3.csv("final.csv", function(data) {
   
   xScaleLine.domain([
     d3.min(years, function(d) {
-      return dateFormat.parse(d);
+      return dateFormat(d);
     }),
     d3.max(years, function(d) {
-      return dateFormat.parse(d);
+      return dateFormat(d);
     })
   ]);
 
@@ -111,8 +109,8 @@ d3.csv("final.csv", function(data) {
       .data(dataset)
       .enter()
       .append("g")
-      .classed("national", function(d) {
-        if (d.genre == "UGANDA") return true;
+      .classed("genres", function(d) {
+        if (d.genre === "Comedy") return true;
         else return false;
       })
       .on("mouseover", function(d) {
@@ -134,7 +132,7 @@ d3.csv("final.csv", function(data) {
 
         d3.selectAll("rect")
         .classed("barLight", function(d) {
-          if ( d.genre == activegenre) return true;
+          if ( d.genre === activegenre) return true;
           else return false;
         });
 
@@ -180,7 +178,7 @@ d3.csv("final.csv", function(data) {
         .attr("x", 0 - marginLine.left)
         .attr("y", marginLine.top - 10)
         .style ("text-anchor", "start")
-        .text("% of candidates who obtained a Division 9 in ");
+        .text("Number of movies released in the 21st Century in the genre of ");
 
         //Labels for highlighted lines - probably better to wrap these into the line elements themselves 
         //with some logic for selecting the ones you want to highlight? Use anonymous function to match objects for highlighting?
