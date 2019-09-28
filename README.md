@@ -65,14 +65,10 @@ Achievements:
 
 
 ### Design:
-- I used the Type.js library for aesthetics. 
+- I used the Type.js, AOS and ScrollReveal libraries for aesthetics. 
 - I hard coded all the styling. 
 - I used LOLColors to coordinate my color scheme. 
 - I used materialize.css to create the collapsible documentation tab. 
 - I did some user testing with my friend and they liked the visualization. They said they would prefer if there is a way to zoom in the line chart so they can see more details, hence why I added a third visualization to showcase how it can be done. Due to time constraint, I could not implement it so it could be updated to show other genres with a drop-down menu.
 - I used ColorBrewer2 to customize the colors used in the bubble chart. 
-
-
-    
-
 
