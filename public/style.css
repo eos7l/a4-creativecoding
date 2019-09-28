@@ -276,21 +276,28 @@ input[type='checkbox'] {
 }
 
 
+
 svg {
 	font: 10px sans-serif;
 }
-.area {
-	fill: #cb7575;
-	clip-path: url(#clip);
-}
+
+
 .axis path,
 .axis line {
 	fill: none;
 	stroke: #000;
 	shape-rendering: crispEdges;
 }
+.y.axis path {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
 .brush .extent {
-	stroke: #ef9e9f;
+	stroke: #fff;
 	fill-opacity: .125;
 	shape-rendering: crispEdges;
+}
+.line {
+	fill: none;
 }

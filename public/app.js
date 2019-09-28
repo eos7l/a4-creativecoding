@@ -1,14 +1,9 @@
-var W = 960, H = 500;
-
-//Setting up Margins
-var mainMargin = {top: 10, right: 10, left: 70, bottom: 140};
-var subMargin = {top: 400, right: 10, bottom: 40, left: 70};
+import {W,H,mainMargin,subMargin} from "./mod2.js";
 
 //Widths, Heights
 var width = W - mainMargin.left - mainMargin.right;
 var mainHeight = H - mainMargin.top - mainMargin.bottom;
 var subHeight = H - subMargin.top - subMargin.bottom;
-
 //year Parser
 var parseyear = d3.time.format("%Y").parse;
 
