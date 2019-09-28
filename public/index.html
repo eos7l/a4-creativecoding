@@ -15,25 +15,21 @@
 <body>
 <div class="container">
     <h1 id="mainHeader"></h1>
-
     <div id="area1"> <!-- barchart container -->
     </div>
     <div id="area2"> <!-- barchart2 container -->
     </div>
-    <div id="chartContainer1">
-        <div id="title-chart1">
-            <h3>The number of <strong>Comedy</strong> movies released between 2000 and
-                2018</h3>
-            <div data-aos="fade-left" id="area3"></div>
-            <button id="reset" class="button">Reset</button>
-        </div>
+
+    <div id="chart-container1">
+        <h3 id="chartTitle">The number of <strong>Comedy</strong> movies released between 2000 and
+            2018</h3>
+        <div data-aos="fade-left" id="area3"></div>
+        <button id="reset" class="button">Reset</button>
     </div>
-    <div id="chartContainer2">
-        <div id="title-chart2">
-            <h3>Number of movies released in 2018 versus the total number of movies release between 2000 and 2018 by
-                Genre</h3>
-            <div data-aos="fade-right" id="area4"></div>
-        </div>
+    <div id="chart-container2">
+        <h3>Number of movies released in 2018 versus the total number of movies release between 2000 and 2018 by
+            Genre</h3>
+        <div data-aos="fade-right" id="area4"></div>
     </div>
     <div class="wrap-collabsible">
         <input id="collapsible" class="toggle" type="checkbox" checked>
@@ -46,7 +42,8 @@
                     upper right-hand side showcases the average number of movies released in the 21st Century by
                     genre. In order to enable zooming in and out for more details, I included a third visualization
                     on the left, which shows the number of <strong>Comedy</strong> movies released between 2000 and
-                    2018. The last bubble chart is showing the number of movies released in 2018 versus the total number of movies release between 2000 and 2018 by
+                    2018. The last bubble chart is showing the number of movies released in 2018 versus the total number
+                    of movies release between 2000 and 2018 by
                     Genre. Hope you enjoy!
                 </p>
             </div>
