@@ -5,31 +5,47 @@
 		<title>A4 - CreativeCoding</title>
 		<!-- Custom CSS styles -->
 		<link href="style.css" rel="stylesheet" type="text/css" >
-<!--		<script type="text/javascript" src="/assets/dat.gui.min.js"></script>-->
 		<script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
+		<script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.js"></script>
 		<script type="module" src="main.js"></script>
 
 	</head>
 	<body>
 		<div class="container">
-			<h2 id="mainHeader">  </h2>
+			<h1 id="mainHeader">  </h1>
 			<h4> </h4>
 			<div id="area1"> <!-- barchart container -->
 			</div>
 			<div id="area2"> <!-- barchart2 container -->
 			</div>
-			<bubtton id="altBtn" class="button">Read Documentation</bubtton>
-		</div> 
+			<div class="wrap-collabsible">
+				<input id="collapsible" class="toggle" type="checkbox" checked>
+				<label for="collapsible" class="lbl-toggle">More Info</label>
+				<div class="collapsible-content">
+					<div class="content-inner">
+						<p>
+							QUnit is by calling one of the object that are embedded in JavaScript, and faster JavaScript program could also used with
+							its elegant, well documented, and functional programming using JS, HTML pages Modernizr is a popular browsers without
+							plug-ins. Test-Driven Development.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="footer">
-			<strong>Source</strong> : www.data.ug
+			<button id="reset">Reset</button>
 		</div>
 		<!-- JS Libraries -->
 		<!--<script src="d3.js" charset="utf-8"></script>-->
 
 		<!-- Custom JS code -->
+	<!-- Compiled and minified JavaScript -->
+
 		<script src='area1.js' type='text/javascript'></script>
 		<script src='area2.js' type='text/javascript'></script>
+	    <script src='app.js' type='text/javascript'></script>
 
 	</body>
 </html>
