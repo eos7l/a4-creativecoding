@@ -12,7 +12,8 @@ To fulfill the requirements:
 - Documentation tab can be triggered to be reopened.
 - A third visualization that allows zooming in, thanks to brushing.
 - A reset button to zoom out from the third visualization. 
-- A zoom in AND zoom out for the bubble chart using mouse scroll wheels.  (PS: I confirmed with Noelle that zoom in and zoom out count as 2 separate control parameters)
+- A zoom in AND zoom out for the bubble chart via mouse scroll wheels.  (PS: I confirmed with Noelle that zoom in and zoom out count as 2 separate control parameters)
+- You can also double click to exit out of the zoom in the bubble chart.
 
 ### Linter:
 
@@ -57,10 +58,10 @@ Achievements:
 
 
 ### Technical:
-- There are many types of interactions involved in this visualization including linked views, zooming in and out with brushing and tooltip. Most user controls are non-trivial. 
+- There are many types of interactions involved in this visualization including linked views, zooming in and out with brushing and tooltip. There are more than 6 user controls and most of them are non-trivial. 
 - The axises are dynamically generated based on the data input.
 - It took me a while to clean up the data found from Professor's recommended website for jSON dataset. I mainly used the dplyr package in R, which was so much more efficient than Excel.
-- I have a total of three charts and each does something differently. 
+- I have a total of four charts and each does something differently. 
 
 
 ### Design:
