@@ -11,8 +11,8 @@ To fulfill the requirements:
 - Linked views on hover, also there is a caption being live-updated based on hovering.
 - Documentation tab can be triggered to be reopened.
 - A third visualization that allows zooming in, thanks to brushing.
-- A reset button to zoom out from the third visualization.  (PS: I confirmed with Noelle that zoom in and zoom out count as 2 separate control parameters)
-- 
+- A reset button to zoom out from the third visualization. 
+- A zoom in AND zoom out for the bubble chart using mouse scroll wheels.  (PS: I confirmed with Noelle that zoom in and zoom out count as 2 separate control parameters)
 
 ### Linter:
 
@@ -69,7 +69,7 @@ Achievements:
 - I used LOLColors to coordinate my color scheme. 
 - I used materialize.css to create the collapsible documentation tab. 
 - I did some user testing with my friend and they liked the visualization. They said they would prefer if there is a way to zoom in the line chart so they can see more details, hence why I added a third visualization to showcase how it can be done. Due to time constraint, I could not implement it so it could be updated to show other genres with a drop-down menu.
-
+- I used ColorBrewer2 to customize the colors used in the bubble chart. 
 
 
     

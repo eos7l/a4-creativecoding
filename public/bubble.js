@@ -10,14 +10,14 @@ var x = d3.scale.linear()
 var y = d3.scale.linear()
     .range([height, 0]).nice();
 
-var xCat = "yr2018",
+var xCat = "Year 2018",
     yCat = "total",
     rCat = "avg",
     colorCat = "genre";
 
 d3.csv("final2.csv", function(data) {
     data.forEach(function(d) {
-        d.yr2018 = +d.yr2018;
+        d["Year 2018"] = +d["Year 2018"];
         d.total = +d.total;
         d.avg = +d.avg;
     });
@@ -42,7 +42,9 @@ d3.csv("final2.csv", function(data) {
         .orient("left")
         .tickSize(-width);
 
-    var color = d3.scale.category10();
+    //var color = d3.scale.category10();
+    var color = d3.scale.ordinal()
+        .range(['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']);
 
     var tip = d3.tip()
         .attr("class", "d3-tip")
