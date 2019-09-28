@@ -31,17 +31,17 @@ var mainArea = d3.svg.area()
     })
     .y0(mainHeight)
     .y1(function (d) {
-        return mainYScale(d.comedy)
+        return mainYScale(d.comedy);
     });
 
 var subArea = d3.svg.area()
     .interpolate('monotone')
     .x(function (d) {
-        return subXScale(d.year)
+        return subXScale(d.year);
     })
     .y0(subHeight)
     .y1(function (d) {
-        return subYScale(d.comedy)
+        return subYScale(d.comedy);
     });
 
 var svg = d3.select('#area3').append('svg')
@@ -73,10 +73,10 @@ d3.csv('div9.csv', function (d) {
     return d;
 }, function (err, data) {
     mainXScale.domain(d3.extent(data, function (d) {
-        return d.year
+        return d.year;
     }));
     mainYScale.domain([0, d3.max(data, function (d) {
-        return d.comedy
+        return d.comedy;
     })]);
 
     subXScale.domain(mainXScale.domain());
