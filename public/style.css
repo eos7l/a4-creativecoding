@@ -1,6 +1,5 @@
 .container {
 	width: 1200px;
-	height: 700px;
 	margin: 25px auto 25px auto;
 	padding: 50px 50px 50px 50px;
 	background-color: white;
@@ -56,6 +55,10 @@ svg {
 #area2 {
 	display: inline-block;
 /*	float: left;*/
+}
+
+#area3{
+	margin-top: 30px;
 }
 
 /*#footer {

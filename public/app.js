@@ -44,7 +44,7 @@ var subArea = d3.svg.area()
         return subYScale(d.comedy)
     });
 
-var svg = d3.select('body').append('svg')
+var svg = d3.select('#area3').append('svg')
     .attr('width', W)
     .attr('height', H);
 

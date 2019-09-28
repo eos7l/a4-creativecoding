@@ -8,10 +8,10 @@ To fulfill the requirements:
 ---
 ### Six user controls:
 - Tooltip: there might be a slight delay but it is there. 
-- Linked views on hover, also there is a caption being live-updated based on hover.
-- Documentation tab can be triggered to reopen the documentation.
-- a third visualization that allows brushing 
-- a reset button to reset the third visualization
+- Linked views on hover, also there is a caption being live-updated based on hovering.
+- Documentation tab can be triggered to be reopened.
+- A third visualization that allows zooming in and out, thanks to brushing.
+- A reset button to zoom out from the third visualization.
 
 ### Linter:
 
@@ -50,17 +50,19 @@ Achievements:
 
 
 ### Technical:
-- I did some user testing with my friend and they liked the visualization. They said they would prefer if there is a way to zoom in the line chart so they can see more details.
-- There are many types of interactions involved in this visualization including linked views and tooltip. 
+- There are many types of interactions involved in this visualization including linked views, zooming in and out with brushing and tooltip. 
 - The axises are dynamically generated based on the data input.
 - It took me a while to clean up the data found from Professor's recommended website for jSON dataset. I mainly used the dplyr package in R, which was so much more efficient than Excel.
-
+- I have a total of three charts and each does something differently. 
 
 
 ### Design:
-- Used the Type.js library for aesthetics. 
+- I used the Type.js library for aesthetics. 
 - I hard coded all the styling. 
+- I used LOLColors to coordinate my color scheme. 
 - I used materialize.css to create the collapsible documentation tab. 
+- I did some user testing with my friend and they liked the visualization. They said they would prefer if there is a way to zoom in the line chart so they can see more details, hence why I added a third visualization to showcase how it can be done. Due to time constraint, I could not implement it so it could be updated to show other genres with a drop-down menu.
+
 
 
     
