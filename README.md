@@ -1,6 +1,6 @@
 Data Visualization
 ===
-http://a4-eos7l.glitch.me
+https://a4-eos7l.herokuapp.com/
 
 This is a data visualization consists of 2 linked charts rendered using D3.js. 
 
@@ -45,7 +45,9 @@ Main Challenges:
 - I also tried to use Waypoint's infiniteScroll package and failed to make it work. This is probably the third time I tried to incorporate this package into my code but never succeeded...
 
 
-
+Implications:
+---
+- If brushing is malfunctioning, please refresh the page. 
 
 
 
