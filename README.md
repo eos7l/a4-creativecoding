@@ -10,8 +10,9 @@ To fulfill the requirements:
 - Tooltip: there might be a slight delay but it is there. 
 - Linked views on hover, also there is a caption being live-updated based on hovering.
 - Documentation tab can be triggered to be reopened.
-- A third visualization that allows zooming in AND out, thanks to brushing. (PS: I confirmed with Noelle that zoom in and zoom out count as 2 separate control parameters)
-- A reset button to zoom out from the third visualization.
+- A third visualization that allows zooming in, thanks to brushing.
+- A reset button to zoom out from the third visualization.  (PS: I confirmed with Noelle that zoom in and zoom out count as 2 separate control parameters)
+- 
 
 ### Linter:
 
