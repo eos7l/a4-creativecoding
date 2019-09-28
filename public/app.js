@@ -5,7 +5,7 @@ var width = W - mainMargin.left - mainMargin.right;
 var mainHeight = H - mainMargin.top - mainMargin.bottom;
 var subHeight = H - subMargin.top - subMargin.bottom;
 //year Parser
-var parseyear = d3.time.format("%Y").parse;
+var parseYear = d3.time.format("%Y").parse;
 
 //Main Chart Scales
 var mainXScale = d3.time.scale().range([0, width]);
@@ -68,7 +68,7 @@ var brush = d3.svg.brush()
     .on("brush", brushed);
 
 d3.csv('div9.csv', function (d) {
-    d.year = parseyear(d.year);
+    d.year = parseYear(d.year);
     d.comedy = +d.comedy;
     return d;
 }, function (err, data) {

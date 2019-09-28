@@ -40,7 +40,10 @@ Goals:
 
 Main Challenges:
 ---
-- I had the most problems using dat.GUI and putting my codes into modules. I ended up not using dat.GUI and just 
+- I had the most problems using dat.GUI (which is apparently hated by my linter). I ended up not using dat.GUI at all, also because I wanted to make some non-trivial user controls which is even more difficult to be done using dat.GUI.
+- I learned that integrating way too many interactions in the same visualization not only doesn't help users to understand the data, but also makes each interactive element kinda messed up. For instance, having hovering and clicking and dragging all in one viz is fancy but not practical for the mouse states.
+
+
 
 
 

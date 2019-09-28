@@ -1,4 +1,4 @@
-var W = 960, H = 500;
+var W = 600, H = 500;
 
 //Setting up Margins
 var mainMargin = {top: 10, right: 10, left: 70, bottom: 140};

@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>A4 - CreativeCoding</title>
-		<!-- Custom CSS styles -->
-		<link href="style.css" rel="stylesheet" type="text/css" >
-		<script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
-		<script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.js"></script>
-		<script type="module" src="main.js"></script>
-		<script type="module" src="app.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>A4 - CreativeCoding</title>
+    <!-- Custom CSS styles -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.js"></script>
+    <script type="module" src="main.js"></script>
 
-	</head>
-	<body>
-		<div class="container">
-			<h1 id="mainHeader">  </h1>
-			<h4> </h4>
-			<div id="area1"> <!-- barchart container -->
-			</div>
-			<div id="area2"> <!-- barchart2 container -->
-			</div>
-			<div id="area3"> <!-- barchart2 container -->
-			</div>
-			<button id="reset">Reset</button>
-			<div class="wrap-collabsible">
-				<input id="collapsible" class="toggle" type="checkbox" checked>
-				<label for="collapsible" class="lbl-toggle">More Info</label>
-				<div class="collapsible-content">
-					<div class="content-inner">
-						<p>
-							QUnit is by calling one of the object that are embedded in JavaScript, and faster JavaScript program could also used with
-							its elegant, well documented, and functional programming using JS, HTML pages Modernizr is a popular browsers without
-							plug-ins. Test-Driven Development.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- JS Libraries -->
-		<!--<script src="d3.js" charset="utf-8"></script>-->
 
-		<!-- Custom JS code -->
-	<!-- Compiled and minified JavaScript -->
+</head>
+<body>
+<div class="container">
+    <h1 id="mainHeader"></h1>
+    <h4></h4>
+    <div id="area1"> <!-- barchart container -->
+    </div>
+    <div id="area2"> <!-- barchart2 container -->
+    </div>
+    <div id="textContainer">
+        <div id="area3"> <!-- barchart2 container -->
+        </div>
+		<button id="reset" class="button">Reset</button>
+        <div class="wrap-collabsible"  style="display: inline-block; width:300px; margin-left: 100px; margin-top: -100px">
+            <input id="collapsible" class="toggle" type="checkbox" checked>
+            <label for="collapsible" class="lbl-toggle">Notes</label>
+            <div class="collapsible-content">
+                <div class="content-inner">
+                    <p>
+                        Hello, welcome to my A4! The first visualization on the upper left-hand side showcases the
+                        number of movies released in the 21st Century by genre whereas the second visualization on the
+                        upper right-hand side showcases the average number of movies released in the 21st Century by
+                        genre. In order to enable zooming in and out for more details, I included a third visualization
+                        on the left, which shows the number of <strong>Comedy</strong> movies released between 2000 and
+                        2018. Hope you enjoy playing around with them!
+                    </p>
+                </div>
+            </div>
+        </div>
 
-		<script src='area1.js' type='text/javascript'></script>
-		<script src='area2.js' type='text/javascript'></script>
+    </div>
+</div>
+<!-- JS Libraries -->
+<!--<script src="d3.js" charset="utf-8"></script>-->
 
-	</body>
+<!-- Custom JS code -->
+<!-- Compiled and minified JavaScript -->
+<script type="module" src="app.js"></script>
+<script src='area1.js' type='text/javascript'></script>
+<script src='area2.js' type='text/javascript'></script>
+
+
+</body>
 </html>

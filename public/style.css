@@ -1,64 +1,66 @@
 .container {
-	width: 1200px;
-	margin: 25px auto 25px auto;
-	padding: 50px 50px 50px 50px;
-	background-color: white;
-	box-shadow: 0 0 20px #ccc;
+    width: 1200px;
+    margin: 25px auto 25px auto;
+    padding: 50px 50px 50px 50px;
+    background-color: white;
+    box-shadow: 0 0 20px #ccc;
 }
+
 #footer {
-	border-top: 1px solid silver;
-	color: #888888;
-	font-size: 1.25rem;
-	text-align: center;
-	margin-top: 1rem;
-	padding: 0.5rem;
+    border-top: 1px solid silver;
+    color: #888888;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
 }
 
 
 body {
-	background-color: #fff;
-	font-family: "adelle-1","adelle-2", constantia, cambria, Georgia, serif;
-	font-size:14px;
-	margin: 18px 0 0 30px;
+    background-color: #fff;
+    font-family: "adelle-1", "adelle-2", constantia, cambria, Georgia, serif;
+    font-size: 14px;
+    margin: 18px 0 0 30px;
 }
 
 h1 {
-	font-size: 24px;
-	margin: 0;
-	color: #353848;
-	font-weight: normal;
+    font-size: 24px;
+    margin: 0;
+    color: #353848;
+    font-weight: normal;
 }
 
 h2 {
-	font-weight: normal;
-	color: #353848;
+    font-weight: normal;
+    color: #353848;
 }
 
 p {
-	color: #3c3530;
+    color: #3c3530;
 }
 
 svg {
-	background-color: white;
+    background-color: white;
 }
 
 #intro {
-	width: 740px;
-	line-height: 150%;
+    width: 740px;
+    line-height: 150%;
 }
 
 #area1 {
-	display: inline-block;
-/*	float: right;*/
+    display: inline-block;
+    /*	float: right;*/
 }
 
 #area2 {
-	display: inline-block;
-/*	float: left;*/
+    display: inline-block;
+    /*	float: left;*/
 }
 
-#area3{
-	margin-top: 30px;
+#area3 {
+    margin-top: 30px;
+    display: inline-block;
 }
 
 /*#footer {
@@ -69,238 +71,278 @@ svg {
 }*/
 
 path {
-	stroke: #a79c8e;
-	stroke-width: 2;
-	opacity: 0.2;
-	-moz-transition: all 0.1s;
-	-o-transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-	transition: all 0.1s;
-	cursor: pointer;
-	fill: none;
+    stroke: #a79c8e;
+    stroke-width: 2;
+    opacity: 0.2;
+    -moz-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    cursor: pointer;
+    fill: none;
 }
 
-g.linklight path{
-	stroke: #ff0000;
-	opacity: 1;
+g.linklight path {
+    stroke: #ff0000;
+    opacity: 1;
 }
 
 g.highlight path {
-	stroke: #cfa63e;
-	stroke-width: 4;
-	opacity: 1;
+    stroke: #cfa63e;
+    stroke-width: 4;
+    opacity: 1;
 }
 
 g.national path {
-	stroke: #cb7575;
-	stroke-width: 4;
-	opacity: 1;
+    stroke: #cb7575;
+    stroke-width: 4;
+    opacity: 1;
 }
 
 
 .axis path,
 .axis line {
-	fill: none;
-	stroke: #a79c8e;
-	stroke-width: 1;
-	shape-rendering: crispEdges;
+    fill: none;
+    stroke: #a79c8e;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
 }
 
 .axis path {
-	opacity: 1;
+    opacity: 1;
 }
 
 .line:hover, .pathBase:hover {
-	stroke: black;
-	opacity: 1;
+    stroke: black;
+    opacity: 1;
 }
 
 .pathBase {
-	stroke: #888;
-	opacity: 0.2;
+    stroke: #888;
+    opacity: 0.2;
 }
 
 .pathLight {
-	stroke: black;
-	opacity: 1;
+    stroke: black;
+    opacity: 1;
 }
 
 #hoverlabel {
-	font-family: "ff-nuvo-sc-web-pro-1","ff-nuvo-sc-web-pro-2", sans-serif;
-	fill: #496d64;
-	font-size: 15px;
-	color: #808080;
-	text-anchor: start;
+    font-family: "ff-nuvo-sc-web-pro-1", "ff-nuvo-sc-web-pro-2", sans-serif;
+    fill: #496d64;
+    font-size: 15px;
+    color: #808080;
+    text-anchor: start;
 }
 
 .axis text {
-	font-family: "ff-nuvo-sc-web-pro-1","ff-nuvo-sc-web-pro-2", sans-serif;
-	font-size: 14px;
-	letter-spacing: 0.5px;
+    font-family: "ff-nuvo-sc-web-pro-1", "ff-nuvo-sc-web-pro-2", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 
 .linelabel {
-	font-family: "ff-nuvo-sc-web-pro-1","ff-nuvo-sc-web-pro-2", sans-serif;
-	fill: #333;
-	font-size: 12px;
-	text-anchor: start;
-	opacity: 0.5;
+    font-family: "ff-nuvo-sc-web-pro-1", "ff-nuvo-sc-web-pro-2", sans-serif;
+    fill: #333;
+    font-size: 12px;
+    text-anchor: start;
+    opacity: 0.5;
 }
 
 .labelGenre {
-	font-family: "ff-nuvo-sc-web-pro-1","ff-nuvo-sc-web-pro-2", sans-serif;
-	fill: #a79c8e;
-	font-size: 12px;
-	text-anchor: start;
+    font-family: "ff-nuvo-sc-web-pro-1", "ff-nuvo-sc-web-pro-2", sans-serif;
+    fill: #a79c8e;
+    font-size: 12px;
+    text-anchor: start;
 }
 
 .labelDistrict {
-	font-family: "ff-nuvo-sc-web-pro-1","ff-nuvo-sc-web-pro-2", sans-serif;
-	fill: #cfa63e;
-	font-size: 12px;
-	text-anchor: start;
+    font-family: "ff-nuvo-sc-web-pro-1", "ff-nuvo-sc-web-pro-2", sans-serif;
+    fill: #cfa63e;
+    font-size: 12px;
+    text-anchor: start;
 }
 
 
-
 .path.active {
-	stroke: black;
-	opacity: 1;
+    stroke: black;
+    opacity: 1;
 }
 
 /* Bar specific CSS */
 
 rect:hover {
-	fill: #353848;
+    fill: #353848;
 }
 
 .barBase {
-	fill: #cb7575;
+    fill: #cb7575;
 }
 
 .barLight {
-	fill: #353848;
+    fill: #353848;
 }
 
 .axisBar text {
-	font-family: "ff-nuvo-sc-web-pro-1","ff-nuvo-sc-web-pro-2", sans-serif;
-	font-size: 11px;
+    font-family: "ff-nuvo-sc-web-pro-1", "ff-nuvo-sc-web-pro-2", sans-serif;
+    font-size: 11px;
 }
 
 .axisBarTitle {
-	font-family: "ff-nuvo-sc-web-pro-1","ff-nuvo-sc-web-pro-2", sans-serif;
-	font-size: 12px;
+    font-family: "ff-nuvo-sc-web-pro-1", "ff-nuvo-sc-web-pro-2", sans-serif;
+    font-size: 12px;
 }
 
 .y.axisBar path,
 .y.axisBar line {
-	opacity: 0;
-	cursor: auto;
+    opacity: 0;
+    cursor: auto;
 }
 
 .x.axisBar path,
 .x.axisBar line {
-	opacity: 0.2;
-	cursor: auto;
+    opacity: 0.2;
+    cursor: auto;
 }
 
 .barlabel {
-	font-family: "ff-nuvo-sc-web-pro-1","ff-nuvo-sc-web-pro-2", sans-serif;
-	font-size:11px;
+    font-family: "ff-nuvo-sc-web-pro-1", "ff-nuvo-sc-web-pro-2", sans-serif;
+    font-size: 11px;
 }
 
 input[type='checkbox'] {
-	display: none;
+    display: none;
 }
+
 .lbl-toggle {
-	display: block;
+    display: block;
 
-	font-weight: bold;
-	font-family: monospace;
-	font-size: 1.2rem;
-	text-transform: uppercase;
-	text-align: center;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
 
-	padding: 1rem;
+    padding: 1rem;
 
-	color: #353848;
-	background: #ef9e9f;
+    color: #353848;
+    background: #ef9e9f;
 
-	cursor: pointer;
+    cursor: pointer;
 
-	border-radius: 7px;
-	transition: all 0.25s ease-out;
+    border-radius: 7px;
+    transition: all 0.25s ease-out;
 }
 
 .lbl-toggle:hover {
-	color:  #cb7575;
+    color: #cb7575;
 }
+
 .lbl-toggle::before {
-	content: ' ';
-	display: inline-block;
+    content: ' ';
+    display: inline-block;
 
-	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-left: 5px solid currentColor;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
 
-	vertical-align: middle;
-	margin-right: .7rem;
-	transform: translateY(-2px);
+    vertical-align: middle;
+    margin-right: .7rem;
+    transform: translateY(-2px);
 
-	transition: transform .2s ease-out;
+    transition: transform .2s ease-out;
 }
+
 .collapsible-content .content-inner {
-	background: rgba(239, 158, 159, .2);
-	border-bottom: 1px solid rgba(250, 224, 66, .45);
+    background: rgba(239, 158, 159, .2);
+    border-bottom: 1px solid rgba(250, 224, 66, .45);
 
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-	padding: .5rem 1rem;
-}.collapsible-content {
-	 max-height: 0px;
-	 overflow: hidden;
-
-	 transition: max-height .25s ease-in-out;
- }
-.toggle:checked + .lbl-toggle + .collapsible-content {
-	max-height: 350px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: .5rem 1rem;
 }
+
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+
+    transition: max-height .25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+    max-height: 350px;
+}
+
 .toggle:checked + .lbl-toggle::before {
-	transform: rotate(90deg) translateX(-3px);
+    transform: rotate(90deg) translateX(-3px);
 }
 
 .toggle:checked + .lbl-toggle {
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-.wrap-collabsible{
-	margin-top:30px;
+.wrap-collabsible {
+    margin-top: 30px;
 }
-
 
 
 svg {
-	font: 10px sans-serif;
+    font: 10px sans-serif;
 }
 
 
 .axis path,
 .axis line {
-	fill: none;
-	stroke: #000;
-	shape-rendering: crispEdges;
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }
+
 .y.axis path {
-	fill: none;
-	stroke: #000;
-	shape-rendering: crispEdges;
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }
+
 .brush .extent {
-	stroke: #fff;
-	fill-opacity: .125;
-	shape-rendering: crispEdges;
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
 }
+
 .line {
-	fill: none;
+    fill: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5em 3em;
+    border: 0.16em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.15s;
+}
+
+button:hover {
+    color: #000;
+    border-color: #DDDDDD;
+}
+
+button:active {
+	color: #BBBBBB;
+    border-color: #BBBBBB;
+}
+
+@media all and (max-width: 30em) {
+     button {
+        display: block;
+        margin: 0.4em auto;
+    }
 }
