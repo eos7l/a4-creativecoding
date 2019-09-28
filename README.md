@@ -56,7 +56,7 @@ Achievements:
 
 
 ### Technical:
-- There are many types of interactions involved in this visualization including linked views, zooming in and out with brushing and tooltip. 
+- There are many types of interactions involved in this visualization including linked views, zooming in and out with brushing and tooltip. Most user controls are non-trivial. 
 - The axises are dynamically generated based on the data input.
 - It took me a while to clean up the data found from Professor's recommended website for jSON dataset. I mainly used the dplyr package in R, which was so much more efficient than Excel.
 - I have a total of three charts and each does something differently. 
